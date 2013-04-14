@@ -3,7 +3,7 @@ QT += \
 
 SOURCES += \
     main.cpp \
-    mywindow.cpp
+    mainwindow.cpp
 
 HEADERS += \
-    mywindow.h
+    mainwindow.h
