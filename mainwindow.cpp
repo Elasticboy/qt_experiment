@@ -1,7 +1,6 @@
 #include "mainwindow.h"
 
 #include <memory>
-#include <QHBoxLayout>
 #include <QFont>
 
 MainWindow::MainWindow() : QWidget()
@@ -9,27 +8,49 @@ MainWindow::MainWindow() : QWidget()
     setWindowTitle("Qt Experiments");
     setFixedSize(500, 200);
 
+
+    m_btn_1 = new QPushButton("btn 1");
+    m_btn_2 = new QPushButton("btn 2");
+    m_btn_3 = new QPushButton("btn 3");
+    m_btn_4 = new QPushButton("btn 4");
     //
     // Exit Button
     //
 
     // Create a button with window as parent
-    m_exit_button = new QPushButton("Quit");
+    m_btn_exit = new QPushButton("Quit");
 
     // Customized the button
-    m_exit_button->setToolTip("Help text");
-    m_exit_button->setFont(QFont("Courier", 20, QFont::Bold, false));
-    m_exit_button->setCursor(Qt::PointingHandCursor);
+    m_btn_exit->setToolTip("Help text");
+    m_btn_exit->setFont(QFont("Courier", 20, QFont::Bold, false));
+    m_btn_exit->setCursor(Qt::PointingHandCursor);
 
     // Connect m_button signal "clicked()" with Application slot "quit()"
-    QObject::connect(m_exit_button, SIGNAL(clicked()), qApp, SLOT(quit()));
+    QObject::connect(m_btn_exit, SIGNAL(clicked()), qApp, SLOT(quit()));
 
     //
-    // Horizontal Layout
+    // Horizontal Layouts
+    //
+    m_horizontal_layout_1 = new QHBoxLayout();
+    m_horizontal_layout_1->addWidget(m_btn_1);
+    m_horizontal_layout_1->addWidget(m_btn_2);
+
+    m_horizontal_layout_2 = new QHBoxLayout();
+    m_horizontal_layout_2->addWidget(m_btn_3);
+    m_horizontal_layout_2->addWidget(m_btn_4);
+
+    m_horizontal_layout_exit = new QHBoxLayout();
+    m_horizontal_layout_exit->addWidget(m_btn_exit);
+    m_horizontal_layout_exit->setAlignment(Qt::AlignRight|Qt::AlignBottom);
+
+
+    //
+    // Vertical Layout
     //
 
-    auto layout = new QHBoxLayout();
-    layout->addWidget(m_exit_button);
-    layout->setAlignment(Qt::AlignRight|Qt::AlignBottom);
-    setLayout(layout);
+    m_vertical_layout_main = new QVBoxLayout();
+    m_vertical_layout_main->addLayout(m_horizontal_layout_1);
+    m_vertical_layout_main->addLayout(m_horizontal_layout_2);
+    m_vertical_layout_main->addLayout(m_horizontal_layout_exit);
+    setLayout(m_vertical_layout_main);
 }
