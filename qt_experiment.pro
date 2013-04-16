@@ -3,7 +3,9 @@ QT += \
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    eternityform.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    eternityform.h
