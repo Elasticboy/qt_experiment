@@ -52,9 +52,7 @@ MainWindow::MainWindow() : QWidget()
 }
 
 void MainWindow::openEternityForm() {
-    m_btn_2->setText("Hello");
-    m_btn_2->setEnabled(false);
     auto* form = new EternityForm();
-    form->setWindowFlags(Qt::Window);
+    form->setWindowModality(Qt::WindowModal);
     form->show();
 }

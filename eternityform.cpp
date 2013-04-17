@@ -1,9 +1,13 @@
 #include "eternityform.h"
 
-EternityForm::EternityForm(QWidget *parent) :
-    QWidget(parent)
+EternityForm::EternityForm(QWidget *parent)
+    : QWidget(parent)
 {
     setWindowTitle("Eternity Manager");
 
-    m_btn_eternity = new QTextEdit(this);
+    m_edit_log = new QTextEdit();
+
+    m_layout = new QHBoxLayout();
+    m_layout->addWidget(m_edit_log);
+    setLayout(m_layout);
 }
