@@ -7,7 +7,9 @@ EternityForm::EternityForm(QWidget *parent)
 
     m_edit_log = new QTextEdit();
 
-    m_layout = new QHBoxLayout();
-    m_layout->addWidget(m_edit_log);
+    m_vlayout = new QVBoxLayout();
+    m_hlayout = new QHBoxLayout();
+
+    m_vlayout->addWidget(m_edit_log);
     setLayout(m_layout);
 }

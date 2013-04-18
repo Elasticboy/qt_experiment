@@ -2,7 +2,9 @@
 #define ETERNITYFORM_H
 
 #include <QWidget>
+#include <QPushButton>
 #include <QTextEdit>
+#include <QVBoxLayout>
 #include <QHBoxLayout>
 
 class EternityForm : public QWidget
@@ -15,7 +17,8 @@ public:
 private:
     QTextEdit *m_edit_log;
 
-    QHBoxLayout *m_layout;
+    QVBoxLayout *m_vlayout;
+    QHBoxLayout *m_hlayout;
 
 signals:
     
