@@ -15,7 +15,7 @@ public:
 
 private:
     QPushButton *m_btn_eternity;
-    QPushButton *m_btn_2;
+    QPushButton *m_btn_tab;
     QPushButton *m_btn_3;
     QPushButton *m_btn_4;
     QPushButton *m_btn_exit;
@@ -24,6 +24,7 @@ private:
 
 private slots:
     void openEternityForm();
+    void openTabForm();
 };
 
 #endif // MAINWINDOW_H

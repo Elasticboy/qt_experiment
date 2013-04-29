@@ -11,5 +11,5 @@ EternityForm::EternityForm(QWidget *parent)
     m_hlayout = new QHBoxLayout();
 
     m_vlayout->addWidget(m_edit_log);
-    setLayout(m_layout);
+    setLayout(m_vlayout);
 }

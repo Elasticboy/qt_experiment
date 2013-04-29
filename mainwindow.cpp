@@ -4,6 +4,7 @@
 #include <QFont>
 
 #include "eternityform.h"
+#include "tabform.h"
 
 MainWindow::MainWindow() : QWidget()
 {
@@ -20,7 +21,10 @@ MainWindow::MainWindow() : QWidget()
     // Other Buttons
     //
 
-    m_btn_2 = new QPushButton("btn 2");
+    m_btn_tab = new QPushButton("TabForm");
+    connect(m_btn_tab, SIGNAL(clicked()), this, SLOT(openTabForm()));
+
+
     m_btn_3 = new QPushButton("btn 3");
     m_btn_4 = new QPushButton("btn 4");
 
@@ -42,7 +46,7 @@ MainWindow::MainWindow() : QWidget()
     //
     m_grid_layout = new QGridLayout();
     m_grid_layout->addWidget(m_btn_eternity, 0, 0);
-    m_grid_layout->addWidget(m_btn_2, 0, 1);
+    m_grid_layout->addWidget(m_btn_tab, 0, 1);
     m_grid_layout->addWidget(m_btn_3, 1, 0);
     m_grid_layout->addWidget(m_btn_4, 1, 1);
     m_grid_layout->addWidget(m_btn_exit, 2, 0, 1, 2);
@@ -53,6 +57,12 @@ MainWindow::MainWindow() : QWidget()
 
 void MainWindow::openEternityForm() {
     auto* form = new EternityForm();
+    form->setWindowModality(Qt::WindowModal);
+    form->show();
+}
+
+void MainWindow::openTabForm() {
+    auto* form = new TabForm();
     form->setWindowModality(Qt::WindowModal);
     form->show();
 }

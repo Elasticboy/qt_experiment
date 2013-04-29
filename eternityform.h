@@ -10,7 +10,6 @@
 class EternityForm : public QWidget
 {
     Q_OBJECT
-
 public:
     explicit EternityForm(QWidget *parent = 0);
 
