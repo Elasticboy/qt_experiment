@@ -13,13 +13,15 @@ TabForm::TabForm(QWidget *parent)
     m_tab_1->appendPlainText("hello1");
     m_tab_1->appendPlainText("hello2");
     m_tab_1->appendHtml("<h1>hello3</h1>");
+    loadFile(m_tab_1, "C:/DevSpaces/QtProjects/qt_experiment/file1.log");
 
-    loadFile(m_tab_1);
     m_tab_2 = new QPlainTextEdit();
     m_tab_2->setReadOnly(true);
+    loadFile(m_tab_2, "C:/DevSpaces/QtProjects/qt_experiment/file2.log");
 
     m_tab_3 = new QPlainTextEdit();
     m_tab_3->setReadOnly(true);
+    loadFile(m_tab_3, "C:/DevSpaces/QtProjects/qt_experiment/file3.log");
 
     m_tabs = new QTabWidget();
     m_tabs->addTab(m_tab_1, "Tab_1");
@@ -33,7 +35,7 @@ TabForm::TabForm(QWidget *parent)
 }
 
 
-void TabForm::loadFile(QPlainTextEdit* textEdit, const std::string& filePath) {
+void TabForm::loadFile(QPlainTextEdit* textEdit, const QString& filePath) {
 
     if (!textEdit) {
         return;
@@ -44,7 +46,9 @@ void TabForm::loadFile(QPlainTextEdit* textEdit, const std::string& filePath) {
 
     QTextStream in(&file);
     QString line;
-    while ((line = in.readLine()) != in.atEnd()) {
+
+    while (!in.atEnd()) {
+        line = in.readLine();
         textEdit->appendPlainText(line);
     }
 }

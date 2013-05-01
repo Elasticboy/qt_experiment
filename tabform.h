@@ -1,10 +1,10 @@
 #ifndef TABFORM_H
 #define TABFORM_H
 
-#include <string>
 #include <QWidget>
 #include <QTabWidget>
 #include <QPlainTextEdit>
+#include <QString>
 #include <QVBoxLayout>
 
 class TabForm : public QWidget
@@ -20,7 +20,7 @@ private:
     QPlainTextEdit* m_tab_2;
     QPlainTextEdit* m_tab_3;
 
-    void loadFile(QPlainTextEdit* textEdit, const std::string& filePath);
+    void loadFile(QPlainTextEdit* textEdit, const QString& filePath);
 
 signals:
     
