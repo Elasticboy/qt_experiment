@@ -1,6 +1,7 @@
 #ifndef TABFORM_H
 #define TABFORM_H
 
+#include <string>
 #include <QWidget>
 #include <QTabWidget>
 #include <QPlainTextEdit>
@@ -18,6 +19,8 @@ private:
     QPlainTextEdit* m_tab_1;
     QPlainTextEdit* m_tab_2;
     QPlainTextEdit* m_tab_3;
+
+    void loadFile(QPlainTextEdit* textEdit, const std::string& filePath);
 
 signals:
     
