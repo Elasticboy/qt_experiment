@@ -6,6 +6,10 @@ TabForm::TabForm(QWidget *parent)
     setWindowTitle("Tab Example");
 
     m_tab_1 = new QPlainTextEdit();
+    m_tab_1->appendPlainText("hello1");
+    m_tab_1->appendPlainText("hello2");
+    m_tab_1->appendHtml("<h1>hello3</h1>");
+
     m_tab_2 = new QPlainTextEdit();
     m_tab_3 = new QPlainTextEdit();
 
