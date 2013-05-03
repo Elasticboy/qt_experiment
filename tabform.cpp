@@ -8,6 +8,12 @@ TabForm::TabForm(QWidget *parent)
 {
     setWindowTitle("Tab Example");
 
+    m_menu = new QMenuBar();
+    m_file_menu = new QMenu(tr("File"), this);
+    m_exit_action = new QAction(tr("&Quit"), this);
+    m_file_menu->addAction(m_exit_action);
+    m_menu->addMenu(m_file_menu);
+
     m_tab_1 = new QPlainTextEdit();
     m_tab_1->setReadOnly(true);
     m_tab_1->appendPlainText("hello1");
@@ -30,6 +36,7 @@ TabForm::TabForm(QWidget *parent)
 
     m_vlayout = new QVBoxLayout();
     m_vlayout->addWidget(m_tabs);
+    m_vlayout->setMenuBar(m_menu);
 
     setLayout(m_vlayout);
 }

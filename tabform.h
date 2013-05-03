@@ -6,6 +6,9 @@
 #include <QPlainTextEdit>
 #include <QString>
 #include <QVBoxLayout>
+#include <QMenuBar>
+#include <QMenu>
+#include <QAction>
 
 class TabForm : public QWidget
 {
@@ -15,6 +18,11 @@ public:
     
 private:
     QVBoxLayout *m_vlayout;
+
+    QMenuBar* m_menu;
+    QMenu * m_file_menu;
+    QAction * m_exit_action;
+
     QTabWidget* m_tabs;
     QPlainTextEdit* m_tab_1;
     QPlainTextEdit* m_tab_2;
