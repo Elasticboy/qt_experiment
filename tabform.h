@@ -21,6 +21,7 @@ private:
 
     QMenuBar* m_menu;
     QMenu * m_file_menu;
+    QAction * m_open_file_action;
     QAction * m_exit_action;
 
     QTabWidget* m_tabs;
@@ -33,6 +34,7 @@ private:
 signals:
     
 public slots:
+    void openFile();
     
 };
 
