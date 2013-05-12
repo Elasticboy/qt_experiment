@@ -5,12 +5,14 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     eternityform.cpp \
-    tabform.cpp
+    tabform.cpp \
+    translucentroundwindow.cpp
 
 HEADERS += \
     mainwindow.h \
     eternityform.h \
-    tabform.h
+    tabform.h \
+    translucentroundwindow.h
 
 OTHER_FILES += \
     file1.log \

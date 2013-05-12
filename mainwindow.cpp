@@ -5,6 +5,7 @@
 
 #include "eternityform.h"
 #include "tabform.h"
+#include "translucentroundwindow.h"
 
 MainWindow::MainWindow() : QWidget()
 {
@@ -25,7 +26,9 @@ MainWindow::MainWindow() : QWidget()
     connect(m_btn_tab, SIGNAL(clicked()), this, SLOT(openTabForm()));
 
 
-    m_btn_3 = new QPushButton("btn 3");
+    m_btn_shaped_window = new QPushButton("Shape");
+    connect(m_btn_shaped_window, SIGNAL(clicked()), this, SLOT(openShapeForm()));
+
     m_btn_4 = new QPushButton("btn 4");
 
     //
@@ -47,7 +50,7 @@ MainWindow::MainWindow() : QWidget()
     m_grid_layout = new QGridLayout();
     m_grid_layout->addWidget(m_btn_eternity, 0, 0);
     m_grid_layout->addWidget(m_btn_tab, 0, 1);
-    m_grid_layout->addWidget(m_btn_3, 1, 0);
+    m_grid_layout->addWidget(m_btn_shaped_window, 1, 0);
     m_grid_layout->addWidget(m_btn_4, 1, 1);
     m_grid_layout->addWidget(m_btn_exit, 2, 0, 1, 2);
     //m_grid_layout->addWidget(m_btn_exit, 2, 0, 2, Qt::AlignRight|Qt::AlignBottom);
@@ -63,6 +66,12 @@ void MainWindow::openEternityForm() {
 
 void MainWindow::openTabForm() {
     auto* form = new TabForm();
+    form->setWindowModality(Qt::WindowModal);
+    form->show();
+}
+
+void MainWindow::openShapeForm() {
+    auto* form = new TranslucentRoundWindow();
     form->setWindowModality(Qt::WindowModal);
     form->show();
 }
